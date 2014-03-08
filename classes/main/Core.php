@@ -5,9 +5,13 @@
  * Time: 6:53
  * Класс ядра
  */
+
+/**
+ * Class Core
+ * @property DataBase $db класс БД
+ */
 class Core
 {
-
 
     /**
      * Настройки
@@ -27,6 +31,11 @@ class Core
      */
     public $version;
 
+    /**
+     * @var Components
+     */
+    private $_components;
+
     protected static $_instance;
 
     /**
@@ -37,6 +46,7 @@ class Core
     {
         $this->_loadConfig($config);
 
+        $this->_components = new Components();
         $this->datetime = new DateTime();
     }
 
@@ -48,6 +58,27 @@ class Core
     private function _loadConfig($config)
     {
         $this->config = $config['components'];
+    }
+
+
+    /**
+     * Получение обьекта компанента
+     * @param $name
+     * @return mixed
+     */
+    public function __get($name)
+    {
+        if ($this->_components->exist($name)) {
+            $this->_components->get($name);
+        }
+
+        $config = $this->config;
+        if (isset($config['autoload'][$name])) {
+            $className = $config['autoload'][$name];
+            $component = new $className();
+            $this->_components->add($name, $component);
+            return $component;
+        }
     }
 
     /**
