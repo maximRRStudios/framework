@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: RiDeR
- * Date: 27.02.14
- * Time: 8:01
+ * Тесты
  */
 require_once __DIR__ . "/../classes/main/Core.php";
 

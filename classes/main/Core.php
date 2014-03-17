@@ -1,11 +1,11 @@
 <?php
-/**
- * Created by RiDeR
- * Date: 25.02.14
- * Time: 6:53
- * Класс ядра
- */
 
+namespace classes\main;
+
+use classes\storage\DataBase;
+use classes\Autoload;
+
+require_once __DIR__ . "/../Autoload.php";
 /**
  * Class Core
  * @property DataBase $db класс БД
@@ -21,7 +21,7 @@ class Core
 
     /**
      * текущее время
-     * @var Datetime
+     * @var \Datetime
      */
     public $datetime;
 
@@ -46,8 +46,9 @@ class Core
     {
         $this->_loadConfig($config);
 
+        Autoload::register();
         $this->_components = new Components();
-        $this->datetime = new DateTime();
+        $this->datetime = new \DateTime();
     }
 
 
@@ -65,6 +66,7 @@ class Core
      * Получение обьекта компанента
      * @param $name
      * @return mixed
+     * @throws \Exception
      */
     public function __get($name)
     {
@@ -79,13 +81,15 @@ class Core
             $this->_components->add($name, $component);
             return $component;
         }
+
+        throw new CoreException("Missing Component");
     }
 
     /**
      * Инициализация класса ядра
      * @param $config
      * @return Core
-     * @throws Exception
+     * @throws \Exception
      */
     public static function init($config)
     {
@@ -100,7 +104,7 @@ class Core
     /**
      * Возвращает инициализированый обьект ядра
      * @return Core
-     * @throws Exception
+     * @throws \Exception
      */
     public static function getInstance()
     {

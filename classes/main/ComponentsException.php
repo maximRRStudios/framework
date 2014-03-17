@@ -1,11 +1,10 @@
 <?php
+
+namespace classes\main;
 /**
- * Created by PhpStorm.
- * User: RiDeR
- * Date: 09.03.14
- * Time: 0:30
+ * Исключения компонентов
  */
-class ComponentsException extends Exception
+class ComponentsException extends \Exception
 {
 
 }
