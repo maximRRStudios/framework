@@ -1,10 +1,9 @@
 <?php
 
-namespace classes\storage;
+namespace classes\main\storage;
 
-use classes\main\Core;
+use classes\main\core\Core;
 use PDO;
-use PDOStatement;
 /**
  * Класс работы с БД
  */

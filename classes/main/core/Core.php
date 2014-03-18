@@ -1,14 +1,20 @@
 <?php
 
-namespace classes\main;
+namespace classes\main\core;
 
-use classes\storage\DataBase;
+use classes\main\storage\DataBase;
+use classes\main\http\Request;
+use classes\main\http\HttpClient;
+use classes\main\controller\Routing;
 use classes\Autoload;
 
-require_once __DIR__ . "/../Autoload.php";
+require_once __DIR__ . "/../../Autoload.php";
 /**
  * Class Core
  * @property DataBase $db класс БД
+ * @property Request $request Запрос
+ * @property HttpClient $httpClient Клиент http
+ * @property Routing $route Роутинг
  */
 class Core
 {
@@ -30,6 +36,12 @@ class Core
      * @var string
      */
     public $version;
+
+    /**
+     * Путь
+     * @var string
+     */
+    public $basePath;
 
     /**
      * @var Components
@@ -58,6 +70,8 @@ class Core
      */
     private function _loadConfig($config)
     {
+        $this->version = $config['version'];
+        $this->basePath = $config['basePath'];
         $this->config = $config['components'];
     }
 

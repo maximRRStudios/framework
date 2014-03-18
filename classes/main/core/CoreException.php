@@ -1,6 +1,6 @@
 <?php
 
-namespace classes\main;
+namespace classes\main\core;
 /**
  * Исключения
  */

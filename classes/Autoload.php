@@ -2,7 +2,7 @@
 
 namespace classes;
 /**
- * Автозагрузчик по PSR-0
+ * Автозагрузчик по PSR-1
  */
 class Autoload
 {
