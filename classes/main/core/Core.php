@@ -6,6 +6,7 @@ use classes\main\storage\DataBase;
 use classes\main\http\Request;
 use classes\main\http\HttpClient;
 use classes\main\controller\Routing;
+use classes\main\template\Template;
 use classes\Autoload;
 
 require_once __DIR__ . "/../../Autoload.php";
@@ -15,6 +16,7 @@ require_once __DIR__ . "/../../Autoload.php";
  * @property Request $request Запрос
  * @property HttpClient $httpClient Клиент http
  * @property Routing $route Роутинг
+ * @property Template $template Смарти шаблоны
  */
 class Core
 {

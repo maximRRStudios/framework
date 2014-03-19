@@ -8,7 +8,3 @@ require_once __DIR__ . "/../classes/main/core/Core.php";
 $config = require_once __DIR__ . "/../config/base.php";
 
 Core::init($config);
-
-$app = Core::getInstance();
-$route = $app->route;
-$route->call();

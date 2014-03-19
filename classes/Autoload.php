@@ -6,15 +6,18 @@ namespace classes;
  */
 class Autoload
 {
-    private $directory;
-    private $prefix;
-    private $prefixLength;
+    private $_directory;
+    private $_prefix;
+    private $_prefixLength;
+    private $_vendersPath = array(
+        'Smarty' => 'venders\smarty\Smarty.class.php',
+    );
 
     public function __construct($baseDirectory = __DIR__)
     {
-        $this->directory = $baseDirectory;
-        $this->prefix = __NAMESPACE__ . '\\';
-        $this->prefixLength = strlen($this->prefix);
+        $this->_directory = $baseDirectory;
+        $this->_prefix = __NAMESPACE__ . '\\';
+        $this->_prefixLength = strlen($this->_prefix);
     }
 
     public static function register($prepend = false)
@@ -24,9 +27,15 @@ class Autoload
 
     public function autoload($className)
     {
-        if (0 === strpos($className, $this->prefix)) {
-            $parts = explode('\\', substr($className, $this->prefixLength));
-            $filepath = $this->directory . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, $parts) . '.php';
+        if (0 === strpos($className, $this->_prefix)) {
+            $parts = explode('\\', substr($className, $this->_prefixLength));
+            $filepath = $this->_directory . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, $parts) . '.php';
+            if (is_file($filepath)) {
+                require($filepath);
+            }
+        }
+        if (isset($this->_vendersPath[$className])) {
+            $filepath = $this->_directory . DIRECTORY_SEPARATOR . $this->_vendersPath[$className];
             if (is_file($filepath)) {
                 require($filepath);
             }

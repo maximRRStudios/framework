@@ -21,9 +21,14 @@ return array(
             "request"    => "classes\\main\\http\\Request",
             "httpClient" => "classes\\main\\http\\HttpClient",
             "route"      => "classes\\main\\controller\\Routing",
+            "template"   => "classes\\main\\template\\Template",
         ),
         "routing"  => array(
             "parameter" => "route",
+        ),
+        'smarty' => array(
+            'template_dir' => "{$path}/templates/html",
+            'template_compile_dir' => "{$path}/data/templates_c",
         ),
     )
 );
