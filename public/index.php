@@ -2,8 +2,13 @@
 /**
  * точка входа для генерации
  */
+use classes\main\core\Core;
 
 require_once __DIR__ . "/../classes/main/core/Core.php";
 $config = require_once __DIR__ . "/../config/base.php";
 
-\classes\main\core\Core::init($config);
+Core::init($config);
+
+$app = Core::getInstance();
+$route = $app->route;
+$route->call();

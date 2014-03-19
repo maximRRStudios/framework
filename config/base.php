@@ -23,7 +23,7 @@ return array(
             "route"      => "classes\\main\\controller\\Routing",
         ),
         "routing"  => array(
-            "parameter" => "method",
+            "parameter" => "route",
         ),
     )
 );

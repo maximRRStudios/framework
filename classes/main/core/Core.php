@@ -85,7 +85,7 @@ class Core
     public function __get($name)
     {
         if ($this->_components->exist($name)) {
-            $this->_components->get($name);
+            return $this->_components->get($name);
         }
 
         $config = $this->config;
