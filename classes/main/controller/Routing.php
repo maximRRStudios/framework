@@ -53,7 +53,7 @@ class Routing
 
         $tmp = explode('\\', $method);
         $controller =  self::CONTROLLERS_PATH . ucfirst($tmp[1]) . "Controller";
-        $action = strtolower($tmp[0]) . "Action";
+        $action = $tmp[0] . "Action";
 
         if (!class_exists($controller)
             || !method_exists($controller, $action)) {
