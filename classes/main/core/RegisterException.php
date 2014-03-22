@@ -4,7 +4,7 @@ namespace classes\main\core;
 /**
  * Исключения компонентов
  */
-class ComponentsException extends \Exception
+class RegisterException extends \Exception
 {
 
 }

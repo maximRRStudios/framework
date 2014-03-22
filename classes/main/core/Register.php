@@ -4,7 +4,7 @@ namespace classes\main\core;
 /**
  * Компоненты
  */
-class Components
+class Register
 {
 
     /**
@@ -18,12 +18,12 @@ class Components
      * @param string $name имя компонента
      * @param mixed $value Обьект
      * @param bool $rewrite перезапись или нет
-     * @throws ComponentsException
+     * @throws RegisterException
      */
     public function add($name, $value, $rewrite = false)
     {
         if ($this->exist($name) && !$rewrite) {
-            throw new ComponentsException("Can't add");
+            throw new RegisterException("Can't add");
         }
 
         $this->_items[$name] = $value;
@@ -33,12 +33,12 @@ class Components
      * Получает компонент
      * @param string $name имя компонента
      * @return mixed компоненты
-     * @throws ComponentsException
+     * @throws RegisterException
      */
     public function get($name)
     {
         if (!$this->exist($name)) {
-            throw new ComponentsException("Not found");
+            throw new RegisterException("Not found");
         }
 
         return $this->_items[$name];

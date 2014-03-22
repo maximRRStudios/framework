@@ -56,7 +56,7 @@ class Core
     public $basePath;
 
     /**
-     * @var Components
+     * @var Register
      */
     private $_components;
 
@@ -71,7 +71,7 @@ class Core
         $this->_loadConfig($config);
 
         Autoload::register();
-        $this->_components = new Components();
+        $this->_components = new Register();
         $this->datetime = new DateTime();
     }
 
