@@ -3,6 +3,7 @@
 namespace classes\main\controller;
 
 use classes\main\core\Core;
+use Exception;
 /**
  * Роутинг
  */
@@ -36,7 +37,7 @@ class Routing
             $controller = $this->_controller;
             $action = $this->_action;
             $controller::$action();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             echo $e->getMessage();
         }
     }

@@ -11,6 +11,7 @@ class Autoload
     private $_prefixLength;
     private $_vendersPath = array(
         'Smarty' => 'venders\smarty\Smarty.class.php',
+        'Predis\Autoloader' => '\venders\predis\Autoloader.php',
     );
 
     public function __construct($baseDirectory = __DIR__)
@@ -23,6 +24,7 @@ class Autoload
     public static function register($prepend = false)
     {
         spl_autoload_register(array(new self, 'autoload'), true, $prepend);
+        \Predis\Autoloader::register();
     }
 
     public function autoload($className)

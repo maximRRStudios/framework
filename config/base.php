@@ -16,12 +16,29 @@ return array(
             "pass"    => "root",
             "charset" => "utf8"
         ),
+        'cache_global' => array(
+            'servers' => array(
+                array('ip', 'port', 0),
+            ),
+            'compression' => true,
+            'prefix' => 'prefix'
+        ),
+        'cache_local' => array(
+            'prefix' => 'prefix',
+        ),
+        'cache_file' => array(
+            'path_to_files' => "{$path}/data/libraries",
+        ),
         "autoload" => array(
-            "db"         => "classes\\main\\storage\\DataBase",
-            "request"    => "classes\\main\\http\\Request",
-            "httpClient" => "classes\\main\\http\\HttpClient",
-            "route"      => "classes\\main\\controller\\Routing",
-            "template"   => "classes\\main\\template\\Template",
+            "db"          => "classes\\main\\storage\\DataBase",
+            "request"     => "classes\\main\\http\\Request",
+            "httpClient"  => "classes\\main\\http\\HttpClient",
+            "route"       => "classes\\main\\controller\\Routing",
+            "template"    => "classes\\main\\template\\Template",
+            "localCache"  => "classes\\main\\storage\\Apc",
+            "globalCache" => "classes\\main\\storage\\Memcached",
+            "redis"       => "classes\\main\\storage\\Redis",
+            "fileCache"   => "classes\\main\\storage\\File",
         ),
         "routing"  => array(
             "parameter" => "route",
@@ -29,6 +46,13 @@ return array(
         'smarty' => array(
             'template_dir' => "{$path}/templates/html",
             'template_compile_dir' => "{$path}/data/templates_c",
+        ),
+        'redis' => array(
+            'host' => array(
+                'tcp://localhost:6380',
+            ),
+            'db' => '1',
+            'prefix' => 'prefix'
         ),
     )
 );
