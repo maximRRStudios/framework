@@ -8,3 +8,4 @@ require_once __DIR__ . "/../classes/main/core/Core.php";
 $config = require_once __DIR__ . "/../config/base.php";
 
 Core::init($config);
+print_r($_SERVER);

@@ -7,6 +7,6 @@ class ErrorController
 {
     public static function error404Action()
     {
-        echo "404";//throw new \Exception();
+        header("HTTP/1.0 404 Not Found");
     }
 }

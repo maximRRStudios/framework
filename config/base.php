@@ -6,7 +6,7 @@ $path = realpath(__DIR__ . DIRECTORY_SEPARATOR . '..');
  */
 return array(
     'basePath' => $path,
-    "name"       => "TourGeneration",
+    "name"       => "Framework",
     "version"    => "0.1",
     "components" => array(
         "db"       => array(
@@ -39,6 +39,7 @@ return array(
             "globalCache" => "classes\\main\\storage\\Memcached",
             "redis"       => "classes\\main\\storage\\Redis",
             "fileCache"   => "classes\\main\\storage\\File",
+            "mailer"      => "classes\\main\\mailer\\Mailer",
         ),
         "routing"  => array(
             "parameter" => "route",
@@ -53,6 +54,16 @@ return array(
             ),
             'db' => '1',
             'prefix' => 'prefix'
+        ),
+        'mailer' => array(
+            'smtp' => false,
+            'host' => 'smtp.gmail.com',
+            'port' => 587,
+            'encryption' => 'tls',
+            'auth' => true,
+            'login' => 'username@gmail.com',
+            'pass' => '*****',
+            'from' => 'from@example.com',
         ),
     )
 );

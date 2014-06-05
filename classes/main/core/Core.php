@@ -11,6 +11,7 @@ use classes\main\storage\Apc;
 use classes\main\storage\Memcached;
 use classes\main\storage\Redis;
 use classes\main\storage\File;
+use classes\main\mailer\Mailer;
 use classes\Autoload;
 use DateTime;
 use Exception;
@@ -27,6 +28,7 @@ require_once __DIR__ . "/../../Autoload.php";
  * @property Memcached $globalCache Глобальный кеш
  * @property Redis $redis Клиент redis
  * @property File $fileCache Файловый кеш
+ * @property Mailer $mailer Почта
  */
 class Core
 {

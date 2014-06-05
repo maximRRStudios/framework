@@ -12,6 +12,7 @@ class Autoload
     private $_vendersPath = array(
         'Smarty' => 'venders\smarty\Smarty.class.php',
         'Predis\Autoloader' => '\venders\predis\Autoloader.php',
+        'PHPMailer' => '\venders\phpmailer\class.phpmailer.php',
     );
 
     public function __construct($baseDirectory = __DIR__)
