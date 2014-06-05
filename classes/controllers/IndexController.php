@@ -1,5 +1,7 @@
 <?php
 namespace classes\controllers;
+use classes\main\core\Core;
+
 /**
  * Индекс
  */
@@ -7,6 +9,7 @@ class IndexController
 {
     public static function indexAction()
     {
-        echo "index";
+        $template = Core::getInstance()->template;
+        $template->display("blocks/index/template.tpl");
     }
 }
