@@ -10,9 +10,9 @@ class Autoload
     private $_prefix;
     private $_prefixLength;
     private $_vendersPath = array(
-        'Smarty' => 'venders/smarty/Smarty.class.php',
-        'Predis\\Autoloader' => 'venders/predis/Autoloader.php',
-        'PHPMailer' => 'venders/phpmailer/class.phpmailer.php',
+        'Smarty' => 'venders\\smarty\\Smarty.class.php',
+        'Predis\\Autoloader' => 'venders\\predis\\Autoloader.php',
+        'PHPMailer' => 'venders\\phpmailer\\class.phpmailer.php',
     );
 
     public function __construct($baseDirectory = __DIR__)
@@ -38,9 +38,8 @@ class Autoload
             }
         }
         if (isset($this->_vendersPath[$className])) {
-            $filepath = $this->_directory . DIRECTORY_SEPARATOR . $this->_vendersPath[$className];
-            
-	       if (is_file($filepath)) {
+            $filepath = $this->_directory . DIRECTORY_SEPARATOR . str_replace("\\", DIRECTORY_SEPARATOR, $this->_vendersPath[$className]);
+	           if (is_file($filepath)) {
                 require($filepath);
             }
         }
