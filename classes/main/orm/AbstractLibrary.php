@@ -1,5 +1,5 @@
 <?php
-namespace classes\main\orm;
+namespace classes\main\orm\properties;
 
 use classes\main\collection\Collection;
 use classes\main\core\Core;

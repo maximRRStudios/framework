@@ -1,5 +1,5 @@
 <?php
-namespace classes\main\orm;
+namespace classes\main\orm\properties;
 
 use FilterIterator;
 use Iterator;
