@@ -37,9 +37,7 @@ return array(
             "template"    => "classes\\main\\template\\Template",
             "localCache"  => "classes\\main\\storage\\Apc",
             "globalCache" => "classes\\main\\storage\\Memcached",
-            "redis"       => "classes\\main\\storage\\Redis",
             "fileCache"   => "classes\\main\\storage\\File",
-            "mailer"      => "classes\\main\\mailer\\Mailer",
         ),
         "routing"  => array(
             "parameter" => "route",
