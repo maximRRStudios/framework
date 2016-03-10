@@ -1,5 +1,8 @@
 {
-    "name": "rrstudios/cebyrpunkgame",
+    "config": {
+        "vendor-dir": "classes/vendor"
+    },
+    "name": "rrstudios/framework",
     "version": "0.0.1-dev",
     "autoload": {
         "psr-4": {
