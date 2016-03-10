@@ -9,14 +9,11 @@ use classes\main\controller\Routing;
 use classes\main\template\Template;
 use classes\main\storage\Apc;
 use classes\main\storage\Memcached;
-use classes\main\storage\Redis;
 use classes\main\storage\File;
-use classes\main\mailer\Mailer;
-use classes\Autoload;
 use DateTime;
 use Exception;
 
-require_once __DIR__ . "/../../Autoload.php";
+require_once __DIR__ . "/../../vendor/autoload.php";
 /**
  * Class Core
  * @property DataBase $db класс БД
@@ -26,9 +23,7 @@ require_once __DIR__ . "/../../Autoload.php";
  * @property Template $template Смарти шаблоны
  * @property Apc $localCache Локальный кеш
  * @property Memcached $globalCache Глобальный кеш
- * @property Redis $redis Клиент redis
  * @property File $fileCache Файловый кеш
- * @property Mailer $mailer Почта
  */
 class Core
 {
@@ -72,7 +67,6 @@ class Core
     {
         $this->_loadConfig($config);
 
-        Autoload::register();
         $this->_components = new Register();
         $this->datetime = new DateTime();
     }
