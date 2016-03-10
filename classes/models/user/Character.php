@@ -5,9 +5,9 @@ namespace classes\models\user;
 use classes\main\orm\properties\AbstractModel;
 
 /**
- * Пользователь
+ * Персонаж
  */
-class User extends AbstractModel
+class Character extends AbstractModel
 {
     /**
      * Солдат
@@ -26,6 +26,10 @@ class User extends AbstractModel
 
     protected $_properties = array(
         'id' => array(
+            self::PROPERTY_TYPE => self::TYPE_POSITIVE_INT,
+            self::PROPERTY_DB_NAME => 'id',
+        ),
+        'userId' => array(
             self::PROPERTY_TYPE => self::TYPE_POSITIVE_INT,
             self::PROPERTY_DB_NAME => 'user_id',
         ),
