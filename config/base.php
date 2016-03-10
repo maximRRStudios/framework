@@ -6,7 +6,7 @@ $path = realpath(__DIR__ . DIRECTORY_SEPARATOR . '..');
  */
 return array(
     'basePath' => $path,
-    "name"       => "Framework",
+    "name"       => "cyberpunkgame",
     "version"    => "0.1",
     "components" => array(
         "db"       => array(
@@ -47,23 +47,6 @@ return array(
         'smarty' => array(
             'template_dir' => "{$path}/templates/html",
             'template_compile_dir' => "{$path}/data/templates_c",
-        ),
-        'redis' => array(
-            'host' => array(
-                'tcp://localhost:6380',
-            ),
-            'db' => '1',
-            'prefix' => 'prefix'
-        ),
-        'mailer' => array(
-            'smtp' => false,
-            'host' => 'smtp.gmail.com',
-            'port' => 587,
-            'encryption' => 'tls',
-            'auth' => true,
-            'login' => 'username@gmail.com',
-            'pass' => '*****',
-            'from' => 'from@example.com',
         ),
     )
 );
