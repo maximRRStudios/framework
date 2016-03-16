@@ -38,6 +38,7 @@ return array(
             "localCache"  => "classes\\main\\storage\\Apc",
             "globalCache" => "classes\\main\\storage\\Memcached",
             "fileCache"   => "classes\\main\\storage\\File",
+            "social"      => "classes\\main\\social\\SocialManager",
         ),
         "routing"  => array(
             "parameter" => "route",

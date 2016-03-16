@@ -10,6 +10,7 @@ use classes\main\template\Template;
 use classes\main\storage\Apc;
 use classes\main\storage\Memcached;
 use classes\main\storage\File;
+use classes\main\social\SocialManager;
 use DateTime;
 use Exception;
 
@@ -24,6 +25,7 @@ require_once __DIR__ . "/../../vendor/autoload.php";
  * @property Apc $localCache Локальный кеш
  * @property Memcached $globalCache Глобальный кеш
  * @property File $fileCache Файловый кеш
+ * @property SocialManager $social Социалки
  */
 class Core
 {
