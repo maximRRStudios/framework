@@ -6,12 +6,12 @@ $path = realpath(__DIR__ . DIRECTORY_SEPARATOR . '..');
  */
 return array(
     'basePath' => $path,
-    "name"       => "cyberpunkgame",
+    "name"       => "framework",
     "version"    => "0.1",
     "components" => array(
         "db"       => array(
             "host"    => "localhost",
-            "dbname"  => "cypunk",
+            "dbname"  => "dbname",
             "user"    => "root",
             "pass"    => "root",
             "charset" => "utf8"
