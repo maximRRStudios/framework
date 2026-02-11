@@ -1,16 +1,17 @@
 {
     "config": {
-        "vendor-dir": "classes/vendor"
+        "vendor-dir": "app/vendor"
     },
     "name": "rrstudios/framework",
     "version": "0.0.1-dev",
     "autoload": {
         "psr-4": {
-            "classes\\" : "classes/"
+            "App\\" : "app/"
         }
     },
-    "require":{
-        "php": ">=5.3.0",
-        "smarty/smarty":"4.5.3"
+    "require": {
+        "php": "^8.1",
+        "smarty/smarty": "^4.5",
+        "psr/container": "^2.0"
     }
 }

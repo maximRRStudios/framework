@@ -3,11 +3,11 @@
  * точка входа
  * /index.php?route=action\controller
  */
-use classes\main\core\Core;
+use App\Main\Core\Core;
 
-require_once __DIR__ . "/../classes/main/core/Core.php";
+require_once __DIR__ . "/../app/main/core/Core.php";
 $config = require_once __DIR__ . "/../config/base.php";
 
-Core::init($config);
-$route = Core::getInstance()->route;
+$app = Core::init($config);
+$route = $app->route;
 $route->call();
